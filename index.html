@@ -1,30 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Non Ecolodge Sales KPI V1.0.2h — Booking Calendar</title>
-<link rel="stylesheet" href="styles.css">
+<title>Non Ecolodge Sales KPI V1.0.2k — Lịch đặt phòng</title>
+<link rel="stylesheet" href="styles.css?v=1.0.2k">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="config.js?v=1.0.2h"></script>
+<script src="config.js?v=1.0.2k"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 <div id="login-view" class="login-wrap">
   <div class="login-card">
-    <h2>🔐 Non Ecolodge Sales KPI V1.0.2h</h2>
-    <p>Full Feature Staff Pilot Migration</p>
+    <h2>🔐 Non Ecolodge Sales KPI V1.0.2k</h2>
+    <p>Hệ thống quản lý KPI bán hàng — bản Pilot</p>
     <div id="login-msg"></div>
-    <div class="form-group"><label>Username</label><input id="login-user" autocomplete="username"></div>
-    <div class="form-group"><label>Password</label><input id="login-pass" type="password" autocomplete="current-password"></div>
-    <button onclick="login()">Login</button>
+    <div class="form-group"><label>Tên đăng nhập</label><input id="login-user" autocomplete="username"></div>
+    <div class="form-group"><label>Mật khẩu</label><input id="login-pass" type="password" autocomplete="current-password"></div>
+    <button onclick="login()">Đăng nhập</button>
   </div>
 </div>
 
 <div id="app-view" class="hidden">
 <header>
-  <h1>📊 Non Ecolodge Sales KPI System V1.0.2h — Booking Calendar Sync & Extended Range Pilot</h1>
-  <div class="sub">Frontend–Backend • SQLite/PostgreSQL • Role-based Access • V0.9.2j UI/Functional Parity • Backend Database • Audit Trail</div>
-  <div class="topbar"><span id="whoami"></span><button class="danger" onclick="logout()">Logout</button></div>
+  <h1>📊 Hệ thống KPI bán hàng Non Ecolodge V1.0.2k — Lịch đặt phòng & Đồng bộ dữ liệu</h1>
+  <div class="sub">Frontend–Backend • SQLite/PostgreSQL • Phân quyền theo vai trò • Tương thích giao diện/chức năng V0.9.2j • Cơ sở dữ liệu tập trung • Nhật ký thao tác</div>
+  <div class="topbar"><span id="whoami"></span><button class="danger" onclick="logout()">Đăng xuất</button></div>
 </header>
 <nav id="nav"></nav>
 <main>
@@ -46,29 +46,29 @@
   <section id="validation" class="panel view hidden"></section>
   <section id="users" class="panel view hidden"></section>
 </main>
-<footer>Copyright © 2026 Portlogistics.vn • V1.0.2h Booking Calendar Sync & Extended Range</footer>
+<footer>Bản quyền © 2026 Portlogistics.vn • V1.0.2k — Giao diện tiếng Việt & Lịch đặt phòng thu gọn theo tháng</footer>
 </div>
 
 <div id="booking-modal" class="modal"><div class="modal-card">
- <div class="modal-head"><h2 id="booking-modal-title">Add Booking</h2><span class="x" onclick="closeModal('booking-modal')">&times;</span></div>
+ <div class="modal-head"><h2 id="booking-modal-title">Thêm đặt phòng</h2><span class="x" onclick="closeModal('booking-modal')">&times;</span></div>
  <input type="hidden" id="b-id">
- <div class="form-row"><div class="form-group" id="b-staff-wrap"><label>Staff</label><select id="b-staff"></select></div><div class="form-group"><label>Booking Date</label><input id="b-date" type="date"></div></div>
- <div class="form-row"><div class="form-group"><label>Property</label><select id="b-property" onchange="fillRoomTypes()"></select></div><div class="form-group"><label>Room Type</label><select id="b-room"></select></div></div>
- <div class="form-row"><div class="form-group"><label>Check-in</label><input id="b-in" type="date"></div><div class="form-group"><label>Check-out</label><input id="b-out" type="date"></div></div>
- <div class="form-row"><div class="form-group"><label>Guests</label><input id="b-guests" type="number" min="1" value="2"></div><div class="form-group"><label>Rooms</label><input id="b-rooms" type="number" min="1" value="1"></div></div>
- <div class="form-row"><div class="form-group"><label>Channel</label><select id="b-channel"></select></div><div class="form-group"><label>Status</label><select id="b-status"><option>confirmed</option><option>completed</option><option>pending</option><option>cancelled</option></select></div></div>
- <div class="form-row"><div class="form-group"><label>Segment</label><select id="b-segment"><option>Leisure</option><option>Business</option><option>Group</option></select></div><div class="form-group"><label>Revenue (VND)</label><input id="b-revenue" type="number" min="0" value="0"></div></div>
- <div class="form-row"><div class="form-group"><label>Deposit Due</label><input id="b-deposit" type="number" min="0" value="0"></div><div class="form-group"><label>Deposit Due Date</label><input id="b-deposit-date" type="date"></div></div>
- <div class="form-group"><label>Notes</label><textarea id="b-notes"></textarea></div>
- <button class="success" onclick="saveBooking()">💾 Save</button><button class="secondary" onclick="closeModal('booking-modal')">Cancel</button>
+ <div class="form-row"><div class="form-group" id="b-staff-wrap"><label>Nhân viên</label><select id="b-staff"></select></div><div class="form-group"><label>Ngày đặt</label><input id="b-date" type="date"></div></div>
+ <div class="form-row"><div class="form-group"><label>Cơ sở lưu trú</label><select id="b-property" onchange="fillRoomTypes()"></select></div><div class="form-group"><label>Loại phòng</label><select id="b-room"></select></div></div>
+ <div class="form-row"><div class="form-group"><label>Ngày nhận phòng</label><input id="b-in" type="date"></div><div class="form-group"><label>Ngày trả phòng</label><input id="b-out" type="date"></div></div>
+ <div class="form-row"><div class="form-group"><label>Số khách</label><input id="b-guests" type="number" min="1" value="2"></div><div class="form-group"><label>Số phòng</label><input id="b-rooms" type="number" min="1" value="1"></div></div>
+ <div class="form-row"><div class="form-group"><label>Kênh bán</label><select id="b-channel"></select></div><div class="form-group"><label>Trạng thái</label><select id="b-status"><option value="confirmed">Đã xác nhận</option><option value="completed">Hoàn thành</option><option value="pending">Chờ xử lý</option><option value="cancelled">Đã hủy</option></select></div></div>
+ <div class="form-row"><div class="form-group"><label>Phân khúc</label><select id="b-segment"><option value="Leisure">Nghỉ dưỡng</option><option value="Business">Công tác</option><option value="Group">Đoàn</option></select></div><div class="form-group"><label>Doanh thu (VND)</label><input id="b-revenue" type="number" min="0" value="0"></div></div>
+ <div class="form-row"><div class="form-group"><label>Tiền cọc phải thu</label><input id="b-deposit" type="number" min="0" value="0"></div><div class="form-group"><label>Hạn nộp cọc</label><input id="b-deposit-date" type="date"></div></div>
+ <div class="form-group"><label>Ghi chú</label><textarea id="b-notes"></textarea></div>
+ <button class="success" onclick="saveBooking()">💾 Lưu</button><button class="secondary" onclick="closeModal('booking-modal')">Hủy</button>
 </div></div>
 
 <div id="user-modal" class="modal"><div class="modal-card">
- <div class="modal-head"><h2>Create Account</h2><span class="x" onclick="closeModal('user-modal')">&times;</span></div>
- <div class="form-row"><div class="form-group"><label>Username</label><input id="u-username"></div><div class="form-group"><label>Full Name</label><input id="u-name"></div></div>
- <div class="form-row"><div class="form-group"><label>Password</label><input id="u-password" type="password"></div><div class="form-group"><label>Role</label><select id="u-role"><option>staff</option><option>manager</option><option>admin</option></select></div></div>
- <div class="form-group"><label>Linked Staff ID</label><select id="u-staff"></select></div><button class="success" onclick="saveUser()">Create Account</button>
+ <div class="modal-head"><h2>Tạo tài khoản</h2><span class="x" onclick="closeModal('user-modal')">&times;</span></div>
+ <div class="form-row"><div class="form-group"><label>Tên đăng nhập</label><input id="u-username"></div><div class="form-group"><label>Họ tên</label><input id="u-name"></div></div>
+ <div class="form-row"><div class="form-group"><label>Mật khẩu</label><input id="u-password" type="password"></div><div class="form-group"><label>Vai trò</label><select id="u-role"><option value="staff">Nhân viên</option><option value="manager">Quản lý</option><option value="admin">Quản trị</option></select></div></div>
+ <div class="form-group"><label>Mã nhân viên liên kết</label><select id="u-staff"></select></div><button class="success" onclick="saveUser()">💾 Lưu tài khoản</button>
 </div></div>
 <div id="dynamic-modal" class="modal"></div>
-<script src="app.js?v=1.0.2h"></script>
+<script src="app.js?v=1.0.2k"></script>
 </body></html>

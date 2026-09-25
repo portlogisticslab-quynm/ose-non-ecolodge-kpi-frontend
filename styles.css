@@ -13,3 +13,30 @@
 .calendar-sync-message{margin:6px 0 10px}.calendar-controls button:disabled{opacity:.65;cursor:wait}
 
 .cal-month{margin:18px 0 26px}.cal-month h3{margin:0 0 8px;text-transform:capitalize;color:#24333d}.cal-month h3 small{font-size:13px;font-weight:400;margin-left:12px;color:#68747d}.cal-month .calendar-scroll{max-height:none}.cal-property-head{display:flex;justify-content:space-between;padding:10px 12px;background:color-mix(in srgb,var(--property-color) 12%,white);border-left:6px solid var(--property-color);border-top:1px solid #d8dde3;font-size:13px}.cal-property-head strong{color:var(--property-color)}.cal-booking.status-confirmed,.cal-booking.status-completed{background:var(--property-color)}.cal-booking.status-pending{background:repeating-linear-gradient(135deg,var(--property-color) 0 8px,color-mix(in srgb,var(--property-color) 72%,white) 8px 16px)}.cal-booking.status-cancelled{background:var(--property-color);opacity:.55}.cal-month .cal-header{position:relative}
+
+/* V1.0.2j — Lịch đặt phòng thu gọn: cột ngày tự co để hiển thị trọn một tháng */
+.cal-left-head,.cal-slot-meta{width:170px;min-width:170px}
+.cal-left-head{padding:8px 10px;font-size:12px}
+.cal-slot-meta{grid-template-columns:54px 1fr;column-gap:6px;padding:4px 8px;font-size:12px}
+.cal-slot-meta small{font-size:10px;margin-top:1px}
+.cal-slot-row{min-height:38px}.cal-timeline{height:38px}.cal-day-click{height:38px}
+.cal-booking{top:5px;height:28px;padding:0 5px;font-size:10.5px;border-radius:4px}
+.cal-booking.narrow{padding:0 3px;font-size:10px;letter-spacing:-.2px}
+.cal-date{height:44px;padding-top:4px;overflow:hidden}
+.cal-date span{font-size:14px}
+.cal-date.compact{padding-top:5px}.cal-date.compact strong{font-size:13px;color:#24333d}.cal-date.compact span{font-size:10px;font-weight:600;margin-top:2px;color:#6d7780}
+.cal-date.compact.tiny-font strong{font-size:11px}.cal-date.compact.tiny-font span{font-size:8.5px}
+.cal-date.weekend{background:#fff6ea}.cal-date.weekend span{color:#b45309}
+.cal-date.month-start{box-shadow:inset 2px 0 0 #9aa8b5}
+.cal-date.today{background:#e6f4ea;box-shadow:inset 0 -3px 0 #34a853}
+.cal-roomtype-head{padding:5px 10px}.cal-property-head{padding:7px 10px}
+.cal-month{margin:14px 0 22px}
+
+/* V1.0.2k: tỷ lệ đặt phòng theo từng tháng */
+.calendar-monthly-summary{margin:12px 0 16px;padding:14px;background:#f7f9fc;border:1px solid #dce3eb;border-radius:8px}
+.calendar-monthly-summary h3{margin:0 0 12px;color:#24333d;font-size:17px}
+.calendar-monthly-rates{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px}
+.calendar-month-rate{background:white;border:1px solid #e0e6ec;border-radius:6px;padding:12px}
+.calendar-month-rate span,.calendar-month-rate strong,.calendar-month-rate small{display:block}
+.calendar-month-rate strong{font-size:26px;color:#147d72;margin:4px 0}.calendar-month-rate small{color:#657575;font-size:12px}
+.calendar-monthly-summary p{margin:12px 0 0;line-height:1.5}
