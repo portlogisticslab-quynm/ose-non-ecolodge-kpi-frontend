@@ -2,16 +2,16 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Non Ecolodge Sales KPI V1.0.2k — Lịch đặt phòng</title>
-<link rel="stylesheet" href="styles.css?v=1.0.2k">
+<title>Non Ecolodge Sales KPI V1.0.2m.1 — Lịch đặt phòng</title>
+<link rel="stylesheet" href="styles.css?v=1.0.2m.1">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="config.js?v=1.0.2k"></script>
+<script src="config.js?v=1.0.2m.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 <div id="login-view" class="login-wrap">
   <div class="login-card">
-    <h2>🔐 Non Ecolodge Sales KPI V1.0.2k</h2>
+    <h2>🔐 Non Ecolodge Sales KPI V1.0.2m.1</h2>
     <p>Hệ thống quản lý KPI bán hàng — bản Pilot</p>
     <div id="login-msg"></div>
     <div class="form-group"><label>Tên đăng nhập</label><input id="login-user" autocomplete="username"></div>
@@ -22,7 +22,7 @@
 
 <div id="app-view" class="hidden">
 <header>
-  <h1>📊 Hệ thống KPI bán hàng Non Ecolodge V1.0.2k — Lịch đặt phòng & Đồng bộ dữ liệu</h1>
+  <h1>📊 Hệ thống KPI bán hàng Non Ecolodge V1.0.2m.1 — Lịch đặt phòng & Đồng bộ dữ liệu</h1>
   <div class="sub">Frontend–Backend • SQLite/PostgreSQL • Phân quyền theo vai trò • Tương thích giao diện/chức năng V0.9.2j • Cơ sở dữ liệu tập trung • Nhật ký thao tác</div>
   <div class="topbar"><span id="whoami"></span><button class="danger" onclick="logout()">Đăng xuất</button></div>
 </header>
@@ -46,14 +46,15 @@
   <section id="validation" class="panel view hidden"></section>
   <section id="users" class="panel view hidden"></section>
 </main>
-<footer>Bản quyền © 2026 Portlogistics.vn • V1.0.2k — Giao diện tiếng Việt & Lịch đặt phòng thu gọn theo tháng</footer>
+<footer>Bản quyền © 2026 Portlogistics.vn • V1.0.2m.1 — Giao diện tiếng Việt & Lịch đặt phòng thu gọn theo tháng</footer>
 </div>
 
 <div id="booking-modal" class="modal"><div class="modal-card">
  <div class="modal-head"><h2 id="booking-modal-title">Thêm đặt phòng</h2><span class="x" onclick="closeModal('booking-modal')">&times;</span></div>
  <input type="hidden" id="b-id">
  <div class="form-row"><div class="form-group" id="b-staff-wrap"><label>Nhân viên</label><select id="b-staff"></select></div><div class="form-group"><label>Ngày đặt</label><input id="b-date" type="date"></div></div>
- <div class="form-row"><div class="form-group"><label>Cơ sở lưu trú</label><select id="b-property" onchange="fillRoomTypes()"></select></div><div class="form-group"><label>Loại phòng</label><select id="b-room"></select></div></div>
+ <div class="form-row"><div class="form-group"><label>Cơ sở lưu trú</label><select id="b-property" onchange="fillRoomTypes()"></select></div><div class="form-group"><label>Loại phòng</label><select id="b-room" onchange="document.getElementById('b-slots').value=''"></select></div></div>
+ <div class="form-group"><label>Slot cố định (ví dụ: 2 hoặc 2, 3)</label><input id="b-slots" placeholder="Để trống để tự chọn slot trống"><small>Nhập đủ số slot tương ứng số phòng. Slot phải trống suốt kỳ lưu trú.</small></div>
  <div class="form-row"><div class="form-group"><label>Ngày nhận phòng</label><input id="b-in" type="date"></div><div class="form-group"><label>Ngày trả phòng</label><input id="b-out" type="date"></div></div>
  <div class="form-row"><div class="form-group"><label>Số khách</label><input id="b-guests" type="number" min="1" value="2"></div><div class="form-group"><label>Số phòng</label><input id="b-rooms" type="number" min="1" value="1"></div></div>
  <div class="form-row"><div class="form-group"><label>Kênh bán</label><select id="b-channel"></select></div><div class="form-group"><label>Trạng thái</label><select id="b-status"><option value="confirmed">Đã xác nhận</option><option value="completed">Hoàn thành</option><option value="pending">Chờ xử lý</option><option value="cancelled">Đã hủy</option></select></div></div>
@@ -70,5 +71,6 @@
  <div class="form-group"><label>Mã nhân viên liên kết</label><select id="u-staff"></select></div><button class="success" onclick="saveUser()">💾 Lưu tài khoản</button>
 </div></div>
 <div id="dynamic-modal" class="modal"></div>
-<script src="app.js?v=1.0.2k"></script>
+<script src="reporting.js?v=1.0.2m.1"></script>
+<script src="app.js?v=1.0.2m.1"></script>
 </body></html>
