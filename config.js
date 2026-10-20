@@ -1,6 +1,6 @@
 /* V1.02m.6 — OSE backend selector: home server first (qua Worker ose-failover), Render dự phòng.
    ?api=home | render | local  ghim máy chủ;  ?api=auto  bỏ ghim. */
-window.APP_CONFIG = { APP_VERSION: "1.0.2m.6" };
+window.APP_CONFIG = { APP_VERSION: "1.0.2m.7" };
 (function () {
   if (window.oseFetch) return; // already loaded
   const BACKENDS = {

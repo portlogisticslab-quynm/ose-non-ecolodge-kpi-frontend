@@ -1,30 +1,30 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Non Ecolodge Sales KPI V1.0.2m.6 — Lịch đặt phòng</title>
-<link rel="stylesheet" href="styles.css?v=1.0.2m.6b">
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Non Ecolodge Sales KPI V1.0.2m.7 — Lịch đặt phòng</title>
+<link rel="stylesheet" href="styles.css?v=1.0.2m.7">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="config.js?v=1.0.2m.6b"></script>
+<script src="config.js?v=1.0.2m.7"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 <div id="login-view" class="login-wrap">
   <div class="login-card">
-    <h2>🔐 Non Ecolodge Sales KPI V1.0.2m.6</h2>
+    <h2>🔐 Non Ecolodge Sales KPI V1.0.2m.7</h2>
     <p>Hệ thống quản lý KPI bán hàng — bản Pilot</p>
     <div id="login-msg"></div>
     <div class="form-group"><label>Tên đăng nhập</label><input id="login-user" autocomplete="username"></div>
     <div class="form-group"><label>Mật khẩu</label><input id="login-pass" type="password" autocomplete="current-password"></div>
-    <button onclick="login()">Đăng nhập</button><p class="login-help" style="margin:14px 0 0;font-size:13px;color:#68747d">Li&#234;n h&#7879; v&#7899;i Admin &#273;&#7875; &#273;&#432;&#7907;c h&#432;&#7899;ng d&#7851;n truy c&#7853;p</p>
+    <button onclick="login()">Đăng nhập</button><p style="margin:10px 0 0"><a href="#" onclick="guestView();return false">👁 Xem dữ liệu không cần đăng nhập (chỉ xem)</a></p><p class="login-help" style="margin:14px 0 0;font-size:13px;color:#68747d">Li&#234;n h&#7879; v&#7899;i Admin &#273;&#7875; &#273;&#432;&#7907;c h&#432;&#7899;ng d&#7851;n truy c&#7853;p</p>
   </div>
 </div>
 
 <div id="app-view" class="hidden">
 <header>
-  <h1>📊 Hệ thống KPI bán hàng Non Ecolodge V1.0.2m.6 — Lịch đặt phòng & Đồng bộ dữ liệu</h1>
+  <h1>📊 Hệ thống KPI bán hàng Non Ecolodge V1.0.2m.7 — Lịch đặt phòng & Đồng bộ dữ liệu</h1>
   <div class="sub">Frontend–Backend • SQLite/PostgreSQL • Phân quyền theo vai trò • Tương thích giao diện/chức năng V0.9.2j • Cơ sở dữ liệu tập trung • Nhật ký thao tác</div>
-  <div class="topbar"><span class="backend" id="backendChip" title="Máy chủ đang phục vụ"><span class="dot" id="backendDot"></span><span id="backendText">Đang kết nối…</span></span><select id="backendSelect" aria-label="Máy chủ" title="Chọn máy chủ (thêm ?api= vào địa chỉ)"><option value="auto">Tự động (Home → Render)</option><option value="home">Home server</option><option value="render">Render</option></select><span id="whoami"></span><button class="danger" onclick="logout()">Đăng xuất</button></div>
+  <div class="topbar"><span class="backend" id="backendChip" title="Máy chủ đang phục vụ"><span class="dot" id="backendDot"></span><span id="backendText">Đang kết nối…</span></span><select id="backendSelect" aria-label="Máy chủ" title="Chọn máy chủ (thêm ?api= vào địa chỉ)"><option value="auto">Tự động (Home → Render)</option><option value="home">Home server</option><option value="render">Render</option></select><span id="whoami"></span><button class="readonly-only login-btn" onclick="showLoginView()">🔑 Đăng nhập để chỉnh sửa</button><button class="danger" onclick="logout()">Đăng xuất</button></div>
 </header>
 <nav id="nav"></nav>
 <main>
@@ -46,7 +46,7 @@
   <section id="validation" class="panel view hidden"></section>
   <section id="users" class="panel view hidden"></section>
 </main>
-<footer>Bản quyền © 2026 Portlogistics.vn • V1.0.2m.6 — Giao diện tiếng Việt & Lịch đặt phòng thu gọn theo tháng</footer>
+<footer>Bản quyền © 2026 Portlogistics.vn • V1.0.2m.7 — Giao diện tiếng Việt & Lịch đặt phòng thu gọn theo tháng</footer>
 </div>
 
 <div id="booking-modal" class="modal"><div class="modal-card">
@@ -71,6 +71,6 @@
  <div class="form-group"><label>Mã nhân viên liên kết</label><select id="u-staff"></select></div><button class="success" onclick="saveUser()">💾 Lưu tài khoản</button>
 </div></div>
 <div id="dynamic-modal" class="modal"></div>
-<script src="reporting.js?v=1.0.2m.6b"></script>
-<script src="app.js?v=1.0.2m.6b"></script>
+<script src="reporting.js?v=1.0.2m.7"></script>
+<script src="app.js?v=1.0.2m.7"></script>
 </body></html>
