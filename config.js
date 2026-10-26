@@ -9,7 +9,7 @@ window.APP_CONFIG = { APP_VERSION: "1.0.2m.7" };
     local:  "http://127.0.0.1:8000",
   };
   // Gọi thẳng Render cho thao tác dài (nhập Excel): Render ở cạnh PostgreSQL, không bị giới hạn 5 giây của Worker.
-  const DIRECT = { longJobs: BACKENDS.render };
+  const DIRECT = { longJobs: "https://api-kpi-vps.ose.vn" };   // thao tac dai (nhap Excel) di thang may chinh co DB
   window.OSE_BACKENDS = BACKENDS;
   window.OSE_DIRECT = DIRECT;
   const CACHE_KEY = "ose_api_auto";
