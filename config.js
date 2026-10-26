@@ -5,7 +5,7 @@ window.APP_CONFIG = { APP_VERSION: "1.0.2m.7" };
   if (window.oseFetch) return; // already loaded
   const BACKENDS = {
     home:   "https://api-kpi.ose.vn",                          // Worker ose-failover -> home, lỗi thì Render
-    render: "https://ose-non-ecolodge-kpi-api.onrender.com",
+    render: "https://api-kpi-home.ose.vn",
     local:  "http://127.0.0.1:8000",
   };
   // Gọi thẳng Render cho thao tác dài (nhập Excel): Render ở cạnh PostgreSQL, không bị giới hạn 5 giây của Worker.
